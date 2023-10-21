@@ -1,0 +1,21 @@
+<table border="1">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Body</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let post of posts">
+            <td>{{post.id}}</td>
+            <td>{{post.title}}</td>
+            <td>{{post.body}}</td>
+            <td>
+                <button (click)="editRecord(post)">Edit</button> &nbsp;&nbsp;
+                <button (click)="deleteRecord(post.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

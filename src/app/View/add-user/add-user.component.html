@@ -1,0 +1,26 @@
+<br><br>
+<form [formGroup]="UserForm">
+      
+     <p>
+        <label for="">Name</label><br>
+        <input type="text" name="name" formControlName="name">
+     </p>
+
+     <p>
+        <label for="">Username</label><br>
+        <input type="text" name="username" formControlName="username">
+
+     </p>
+     <p>
+        <label for="">Email</label><br>
+        <input type="text" name="email" formControlName="email">
+
+     </p>
+
+     <p>
+        <button (click)="createRecord()">Create</button>
+      
+     </p>
+
+</form>
+

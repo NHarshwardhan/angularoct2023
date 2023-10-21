@@ -1,0 +1,99 @@
+ 
+  <div class="container mt-4">
+
+    <form [formGroup]="loginForm">     
+        <div>
+          <label>Username </label> &nbsp;
+          <input type="text"  
+               name="username" 
+               formControlName="username" >
+               <div *ngIf="loginForm.controls['username'].errors && loginForm.controls['username'].dirty">
+                <span *ngIf="loginForm.controls['username'].errors?.['required']" style="color:red" > &nbsp;username is required</span>
+                <span *ngIf="loginForm.controls['username'].errors?.['nameIsNotAllowed']" style="color:red" >&nbsp;{{loginForm.controls['username'].value}} is not Allowed</span>
+              </div>
+        </div>
+        <br>
+       <div>
+         
+        <label>Email </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text"  
+               name="email" 
+               formControlName="email" >
+        <!-- Validation -->
+          <div *ngIf="loginForm.controls['email'].errors && loginForm.controls['email'].dirty">
+            <span *ngIf="loginForm.controls['email'].errors?.['required']" style="color:red" > &nbsp;Email is required</span>
+            <span *ngIf="loginForm.controls['email'].errors?.['minlength']" style="color:red" >&nbsp;Minimum 4 characters</span>
+            <span *ngIf="loginForm.controls['email'].errors?.['emailNotAllowed']" style="color:red" >&nbsp;{{loginForm.controls['email'].value}} is  already taken</span>
+
+          </div>
+        <br>
+       </div>
+       <br>
+      <p>
+        <label for="">Password</label>&nbsp;
+        <input  type="password" 
+                name="password"
+                formControlName="password"
+         >
+      </p>
+       <br>
+        <!--  Nested Form group -->
+              <!-- <div formGroupName="address">
+
+                <p>
+                    <label for="">City</label>&nbsp;
+                    <input  type="text" 
+                            name="city"
+                            formControlName="city"
+                  >
+                </p>
+                <br>
+                <p>
+                      <label for="">State</label>&nbsp;
+                      <input  type="text" 
+                              name="state"
+                              formControlName="state"
+                      >
+                </p>
+                <br>
+                <p>
+                      <label for="">Pincode</label>&nbsp;
+                      <input  type="number" 
+                              name="pincode"
+                              formControlName="pincode"
+                      >
+                </p>
+
+
+                
+              </div> -->
+       
+        
+        <!-- Add Dynamic Control  -->
+
+         <div formArrayName="skills">
+                
+               <label for="">Skill</label>
+               
+                <ng-container *ngFor="let skill of skills.controls; let i = index" >
+                      <p>
+                       
+                        <input type="text" formControlName="{{i}}" >&nbsp;
+                        <button *ngIf="i>=1" (click)="onRemoveSkill(i)">remove</button>
+                      </p>
+
+                </ng-container>
+                <button (click)="onAddSkill()"> Add</button>
+              
+         </div>
+         <br>
+      <p>
+        <input type="button" (click)="loginProcess()" value="Login" [disabled]="!loginForm.valid">
+      </p>
+ 
+ 
+ </form>
+
+ 
+   </div> 
+ 

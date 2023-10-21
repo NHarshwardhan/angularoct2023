@@ -1,0 +1,37 @@
+<br>
+
+<h3>Record id : {{id}}</h3><button (click)="deleteRecord()">Delete<br></button>
+<br><br>
+
+<table border="1">
+     <tbody>
+        <tr>
+            <th>Id</th>
+             <!-- Optional Chaining Operator (?.) : used to check the object is not null -->
+            <td>{{user?.id}}</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>{{user?.name}}</td>
+        </tr>
+        <tr>
+            <th>Username</th>
+            <td>{{user?.username}}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{user?.email}}</td>
+        </tr>
+        
+     </tbody>
+</table>
+<br>
+
+<a [routerLink]="['Personal',id]">Personal Info</a>&nbsp;&nbsp;
+<a [routerLink]="['Company',id]">Company Info</a>&nbsp;&nbsp;
+<a [routerLink]="['Address',id]">Address Info</a>&nbsp;&nbsp;
+
+<!-- Render the child or nested route component here -->
+<router-outlet></router-outlet>
+
+

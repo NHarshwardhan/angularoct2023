@@ -1,0 +1,16 @@
+<br><br>
+
+<form [formGroup]="CourseForm" (submit)="updateCourse()">
+
+     <p>
+        <label for="">Course Name</label><br>
+        <input type="text" name="coursename" formControlName="coursename">
+     </p>
+     <p>
+        <label for="">Course Price</label><br>
+        <input type="number" name="courseprice" formControlName="courseprice">
+     </p>
+     <br>
+     <input type="submit" value="Update">
+
+</form>

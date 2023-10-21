@@ -1,0 +1,57 @@
+<br><br>
+<a [routerLink]="['/course/create']">Add New</a>
+<br><br>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Course Name</th>
+            <th>Actions(s)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let course of courses">
+            <td>{{course.id}}</td>
+            <td>{{course.coursename}}</td>
+             <td>
+                 <a [routerLink]="['/course/details',course.id]">more..</a>
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<!-- Accordion -->
+<hr>
+ <!-- Display Accordion dynamically -->
+ <div class="accordion mt-5">
+ <ng-container *ngFor="let u of users" >
+ 
+        <div class="accordion-item mb-2">
+             <h2 class="accordion-header">
+                   <button class="accordion-button" data-bs-toggle="collapse" [attr.data-bs-target]="'#id'+u.id">{{u.name}}</button>
+             </h2>
+             <div id="id{{u.id}}" class="accordion-collapse collapse " >
+               
+                  <div class="accordion-body">
+                         <table class="table table-bordered">
+                             <tbody>
+                                 <tr>
+                                     <th >Email</th>
+                                     <th>{{u.email}}</th>
+                                 </tr>
+                                 <tr>
+                                    <th>Username</th>
+                                    <th>{{u.username}}</th>
+                                </tr>
+                                <tr>
+                                    <th>Phone</th>
+                                    <th>{{u.phone}}</th>
+                                </tr>
+                             </tbody>
+                         </table>
+                  </div>
+             </div>
+        </div>
+ </ng-container>
+ </div>

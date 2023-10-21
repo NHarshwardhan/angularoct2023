@@ -1,0 +1,26 @@
+<br><br>
+<a [routerLink]="['/book/create']">Add new</a>
+<br><br>
+<!-- <table class="table table-bordered table-striped table-borderless "> -->
+    <table class="table table-borderless table-responsive ">
+    <thead class="table-info">
+        <tr>
+            <th>Id</th>
+            <th>Course Name</th>
+            <th>Actions</th>
+            <th>Id</th>
+            <th>Course Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of books">
+            <td>{{book._id}}</td>
+            <td>{{book.coursename}}</td>
+            <td>
+                <a [routerLink]="['/book/details/',book._id]">more..</a>
+            </td>
+        
+        </tr>
+    </tbody>
+</table>

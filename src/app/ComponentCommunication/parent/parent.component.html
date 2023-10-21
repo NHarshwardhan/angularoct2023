@@ -1,0 +1,16 @@
+<h3>parent component</h3>
+<p *ngIf="childMsg">Data from Child Component = 
+
+    <strong>{{childMsg.lang}}</strong>
+</p>
+
+<hr>
+<!-- parentMsg = Hello Everyone..!  -->
+<app-child 
+[parentMsg]="message"
+(childEvent)="callParentMethod($event)"
+>
+
+</app-child>
+
+

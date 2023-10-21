@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* @import "../node_modules/bootstrap/dist/css/bootstrap.min.css" */
+
+
+@font-face {
+    font-family: 'DancingScript';
+    src: url('assets/fonts/DancingScript-Bold.ttf') format('truetype');
+
+}
+@font-face {
+    font-family: 'Nosifer';
+      src: url('assets/fonts/Nosifer-Regular.ttf') format('truetype');
+}

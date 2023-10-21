@@ -1,0 +1,24 @@
+<br><br>
+<form [formGroup]="postForm">
+      
+     <p>
+        <label for="">Title</label><br>
+        <input type="text" name="title" formControlName="title">
+     </p>
+
+     <p>
+        <label for="">Body</label><br>
+        <textarea name="body" formControlName="body" cols="30" rows="10"></textarea>
+     </p>
+
+     <p>
+        <button *ngIf="!editStatus" (click)="createRecord()">Create</button>
+        <button *ngIf="editStatus"  (click)="updateRecord()">Update</button>
+     </p>
+
+</form>
+
+<!-- Child Component -->
+<app-post (childEvent)="callParentMethod($event)">
+
+</app-post>

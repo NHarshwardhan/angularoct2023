@@ -1,0 +1,32 @@
+
+
+<app-employee-count 
+    [All] = "getTotalRecord()"
+    [Male] = "getTotalMaleRecord()"
+    [Female] = "getTotalFemaleRecord()"
+    (childEvent)="callParentmethod($event)"
+>
+
+</app-employee-count>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let emp of employees">
+            <tr *ngIf="emp.gender===selectedRadioButton || selectedRadioButton==='All'">
+                <td>{{emp.id}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.gender}}</td>
+                <td>{{emp.age}}</td>
+            </tr>
+        </ng-container>
+        
+    </tbody>
+</table>

@@ -1,0 +1,30 @@
+ 
+  <div class="container mt-4">
+
+   <form #loginForm="ngForm" (submit)="loginProcess(loginForm.value)" >     
+
+      <div>
+       <label>Email </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <input type="text"  #emailRef="ngModel" name="email" ngModel required minlength="4">
+       <br>
+       <!-- Validation Message -->
+          <div *ngIf="emailRef.errors && emailRef.dirty">
+            <span *ngIf="emailRef.errors?.['required']" style="color:red" > &nbsp;Email is required</span>
+            <span *ngIf="emailRef.errors?.['minlength']" style="color:red" >&nbsp;Minimum 4 characters</span>
+          </div>
+      </div>
+       <br>
+
+     <p>
+       <label for="">Password</label>&nbsp;
+       <input  type="password" name="password" ngModel>
+     </p>
+
+
+     <p>
+       <input type="submit" value="Login" [disabled]="!loginForm.valid">
+     </p>
+
+
+</form>
+  </div> 

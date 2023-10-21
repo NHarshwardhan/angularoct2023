@@ -1,0 +1,104 @@
+<div class="container-fluid" >
+  <div class="row">
+      <div class="col-md-12 " style="padding:0" >
+           <nav class="navbar fixed-top navbar-expand-lg bg-body  ">
+                 <a href="" class="navbar-brand h1">
+                  <img width="140" height="140" class="img-fluid" src="https://www.koenig-solutions.com/img/logo.png" alt="">
+                  <i class="fa-solid fa-oil-well"></i>
+                 </a>
+                 <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mynav">
+                      <span class="navbar-toggler-icon"></span>
+                 </button>
+                 <div id="mynav" class="collapse navbar-collapse">
+                      <ul class="navbar-nav">
+                        <li class="nav-item">
+                          <a  class="nav-link text-decoration-none" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"  (click)="navigate('home')">Home</a> &nbsp;&nbsp;
+                        </li>
+                      <li class="nav-item dropdown">
+                           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Data</a>
+                           <ul class="dropdown-menu">
+                            <li class="nav-item">
+                              <a class="dropdown-item text-decoration-none" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" (click)="navigate('course')">Course</a>&nbsp;&nbsp;
+    
+                            </li>
+                            <li class="nav-item">
+                              <a class="dropdown-item  text-decoration-none" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" (click)="navigate('book')">Book</a>&nbsp;&nbsp;
+    
+                            </li>
+                           </ul>
+                      </li>
+                     <li class="nav-item">
+                      <a class="nav-link text-decoration-none" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" (click)="navigate('secure')">Secure Route</a>&nbsp;&nbsp;
+
+                     </li>
+                     <li class="nav-item">
+                      <a (click)="navigate('login')" class="nav-link text-decoration-none"  routerLinkActive="active" *ngIf="!userService.isLoggedIn()" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" >Login</a>&nbsp;&nbsp;
+
+                     </li>
+                     <!-- <li role="presentation" routerLinkActive="active"><a (click)="navigate('servers')">Servers</a></li> -->
+
+                     <li class="nav-item">
+                      <a class="nav-link text-decoration-none" *ngIf="!userService.isLoggedIn()" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" (click)="navigate('register')" >Register</a>
+
+                     </li>
+                        <button *ngIf="userService.isLoggedIn()" (click)="userService.logout()" >Logout</button>
+                      </ul>
+                 </div>
+           </nav>
+      </div>
+  </div>
+    <div class="row mt-3"  >
+        <div class="col-md-3" >
+           
+        </div>
+        <!-- <div class="col-md-9 nav justify-content-end nav-underline" >
+            <a  class="nav-link text-decoration-none" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" [routerLink]="['home']">Home</a> &nbsp;&nbsp;
+                <a class="nav-link text-decoration-none" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" [routerLink]="['about']">About</a> &nbsp;&nbsp;
+                <a class="nav-link text-decoration-none" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" [routerLink]="['users']">Users</a>&nbsp;&nbsp;
+                <a class="nav-link text-decoration-none" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" [routerLink]="['users/create']">Add Users</a>&nbsp;&nbsp;
+                <a class="nav-link text-decoration-none" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" [routerLink]="['chart']">Chart</a>&nbsp;&nbsp;
+                
+                <a class="nav-link text-decoration-none" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" [routerLink]="['course']">Course</a>&nbsp;&nbsp;
+                <a class="nav-link text-decoration-none" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" [routerLink]="['book']">Book</a>&nbsp;&nbsp;
+                <a class="nav-link text-decoration-none" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" [routerLink]="['secure']">Secure Route</a>&nbsp;&nbsp;
+            
+                <a class="nav-link text-decoration-none" *ngIf="!userService.isLoggedIn()" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" [routerLink]="['login']">Login</a>&nbsp;&nbsp;
+                <a class="nav-link text-decoration-none" *ngIf="!userService.isLoggedIn()" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" [routerLink]="['register']">Register</a>
+                <button *ngIf="userService.isLoggedIn()" (click)="userService.logout()" >Logout</button>
+            
+            
+            
+            
+            
+               
+            
+            
+        </div> -->
+    </div>
+    <i class="bi-amazon"></i>
+    <div class=" row mt-2" >
+      <div class="col-md-12">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    
+    <!-- <div class="row mt-5">
+        <div class="col-md-12">
+              <h1 class="display-6">About Us</h1>
+
+              <p class="h6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus cumque odit facere excepturi! Quisquam, numquam ipsum rem velit labore inventore ut perspiciatis veritatis. Ab natus minima magnam blanditiis quas. Reprehenderit.</p>
+
+              <h1 class="display-5 mt-5 text-end fw-normal text-decoration-underline">Our Services</h1>
+              <p class="text-capitalize fs-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, molestiae maxime dolore impedit eveniet harum aut sapiente eum dolorum modi saepe rem pariatur corporis inventore ipsam natus ullam esse distinctio.
+              </p>
+
+
+              
+        </div>
+    </div> -->
+     
+</div>
+
+
+<!--  -->

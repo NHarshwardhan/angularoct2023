@@ -1,0 +1,23 @@
+<br><br><br>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Action(s)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of users">
+            <td>
+                <a [routerLink]="['details',u.id]">{{u.id}}</a>
+            </td>
+            <td>{{u.name}}</td>
+            <td>{{u.email}}</td>
+            <td>
+                <a [routerLink]="['edit',u.id]" >Edit</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

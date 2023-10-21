@@ -1,0 +1,19 @@
+<table border="1"  align="center">
+    <tbody>
+       <tr>
+           <th>City</th>
+            <!-- Optional Chaining Operator (?.) : used to check the object is not null -->
+           <td>{{user?.address?.city}}</td>
+       </tr>
+       <tr>
+           <th>Street</th>
+           <td>{{user?.address?.street}}</td>
+       </tr>
+       <tr>
+           <th>Pincode</th>
+           <td>{{user?.address?.zipcode}}</td>
+       </tr>
+      
+       
+    </tbody>
+</table>

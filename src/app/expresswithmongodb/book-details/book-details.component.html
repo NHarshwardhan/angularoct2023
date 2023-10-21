@@ -1,0 +1,23 @@
+<br><br>
+<a [routerLink]="['/course']">Back</a>
+<br><br>
+<table border="1">
+     <tbody>
+          <tr>
+              <th>Id</th>
+              <td>{{book?._id}}</td>
+          </tr>
+          <tr>
+            <th>Course Name</th>
+            <td>{{book?.coursename}}</td>
+        </tr>
+        <tr>
+            <th>Course Price</th>
+            <td>{{book?.courseprice}}</td>
+        </tr>
+        <tr>
+            <a [routerLink]="['/book/edit',book?._id]">edit</a> &nbsp;&nbsp;
+            <button (click)="deleteRecord()">Delete</button>
+        </tr>
+     </tbody>
+</table>

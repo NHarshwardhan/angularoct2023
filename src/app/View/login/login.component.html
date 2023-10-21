@@ -1,0 +1,67 @@
+<br><br>
+<div style="margin-left: 30px;">
+    <form [formGroup]="loginForm" (submit)="loginProcess()">     
+ 
+     
+        <label>Email </label> <br>
+        <input type="text"  name="email"  formControlName="email" >     
+        <br><br>
+    
+      
+     
+        <label for="">Password</label><br>
+        <input  type="password" name="password" formControlName="password">
+    
+         <br><br>
+         <input type="submit" value="Login">
+    
+    </form>
+</div>
+
+ 
+<!-- -------------Modal---------- -->
+
+<button class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#orderDetails" >Click Here to Login</button>
+
+<div class=" mb-5 modal fade" id="orderDetails" data-bs-backdrop="static">
+     <div class="modal-dialog modal-dialog-centered ">
+            <div class="modal-content">
+                 <div class="modal-header">
+                     <h4 class="modal-title">Login Panel</h4>
+                 </div>
+                 <div class="modal-body">
+                      <div class="row">
+                        <div class="col-md-12">
+                            <form>
+                      
+                               <div class="py-3">
+                                  <label class="form-label" for="">Email Address</label><br>
+                                  <input class="form-control form-control-lg" type="text" name="coursename" >
+                                 
+                               </div>
+                               <div>
+                                  <label class="form-label" for="">Password</label><br>
+                                  <input  class="form-control" type="password" name="courseprice" >
+                                  <div class="form-text">
+                                    Your password must be 8-20 character long
+                                </div>
+                               </div>
+                                                    
+                                                       
+                          </form>
+                         </div>
+                      </div>
+                 </div>
+                 <div class="modal-footer">
+                     <button class="btn btn-outline-danger" data-bs-dismiss="modal">cancel</button>
+                     <button class="btn btn-outline-primary">Login</button>
+                 </div>
+            </div>
+     </div>
+</div>
+
+<br><br><br>
+<!-- Tooltips -->
+<button class="btn btn-danger" data-bs-placement="right" data-bs-toggle="tooltip" data-bs-title="A Javascript framework">Angular</button>
+<br><br>
+<button type="button" class="btn btn-success" data-bs-toggle="popover" data-bs-title="Meeting Information " data-bs-content="Monday, 24th oct 10:22am ">Meeting Schedule</button>
